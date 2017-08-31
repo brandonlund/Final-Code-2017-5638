@@ -49,7 +49,14 @@ public class driveTrain extends Subsystem {
 		    rearRight.set(speedRight);
 		    frontLeft.set(-speedRight/2);
 	    }
-	    
+	    //GOOD TANK DRIVE
+	    /*
+	    double speedRight = -xbox.getTriggerAxis(GenericHID.Hand.kRight);
+	    double speedLeft = -xbox.getTriggerAxis(GenericHID.Hand.kLeft);
+	    LeftMotor.set(speedLeft);
+	    RightMotor.set(speedRight);
+	    */
+	    //END GOOD TANK DRIVE
 	    SmartDashboard.putNumber("Gyro Yaw", ahrs.getYaw());
     }
     
