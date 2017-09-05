@@ -51,10 +51,22 @@ public class driveTrain extends Subsystem {
 	    }
 	    //GOOD TANK DRIVE
 	    /*
-	    double speedRight = -xbox.getTriggerAxis(GenericHID.Hand.kRight);
-	    double speedLeft = -xbox.getTriggerAxis(GenericHID.Hand.kLeft);
-	    LeftMotor.set(speedLeft);
-	    RightMotor.set(speedRight);
+	    double forwardTrigger = xbox.getTriggerAxis(GenericHID.Hand.kRight);
+	    double reverseTrigger = xbox.getTriggerAxis(GenericHID.Hand.kLeft);
+	    double turnStick = xbox.getRawAxis(0);
+	    
+	    if(-0.15 < turnStick > 0.15){
+	    	turnStick = 0;
+	    }
+	    if(forwardTrigger + reverseTrigger + turnStick > 1){
+	    	leftMotor = 1;
+	    }
+	    if(forwardTrigger + reverseTrigger - turnStick < -1){
+	    	rightMotor = -1;
+	    }
+	    system.out.println("Left Motor:	"+"leftMotor	Right Motor:	"+"rightMotor");
+	    //leftMotor.set(forwardTrigger + reverseTrigger + turnStick);
+	    //rightMotor.set(forwardTrigger + reverseTrigger - turnStick);
 	    */
 	    //END GOOD TANK DRIVE
 	    SmartDashboard.putNumber("Gyro Yaw", ahrs.getYaw());
